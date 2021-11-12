@@ -30,12 +30,18 @@ namespace Project3
         }
         static double CalcTriangleArea(double side1, double side2, double side3)
         {
-
             // Formula of Heron
+            double p = (side1 + side2 + side3);
+            double S = Math.Sqrt(p * (p - side1) * (p - side2) * (p - side3));
+            return S;
         }
         static double CalcLineLength(Point point1, Point point2)
         {
             // Distance between points.
+            double sqrX = Math.Pow(point1.X - point2.X, 2);
+            double sqrY = Math.Pow(point1.Y - point2.Y, 2);
+            double sideLength = Math.Sqrt(sqrX + sqrY);
+            return sideLength;
         }
         static Point GetPointFromUser(string pointName)
         {
